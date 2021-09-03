@@ -13,5 +13,13 @@
       alert('감사합니다.');
     };
   </script>
+
+<input type="button" id="elem" onclick="alert('이전')" value="클릭해 주세요.">
+<script>
+  elem.onclick = function() { // 기존에 작성된 핸들러를 덮어씀
+    alert('이후'); // 이 경고창만 보입니다.
+  };
+</script>
+
 </body>
 </html>
