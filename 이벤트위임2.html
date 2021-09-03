@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="menu">
+    <button data-action="save">저장하기</button>
+    <button data-action="load">불러오기</button>
+    <button data-action="search">검색하기</button>
+  </div>
+  
+  <script>
+    function Menu($target) {
+      this.$target = $target;
+      this.$target.addEventListener('click', e => {
+        const { action } = e.target.closest('button').dataset;
+
+        this[action]();
+      })
+
+      this.save = () => {
+        alert('save');
+      }
+      this.load = () => {
+        alert('load');
+      }
+      this.search = () => {
+        alert('search');
+      }
+
+    }
+  
+    new Menu(menu);
+  </script>
+</body>
+</html>
